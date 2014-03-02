@@ -1,0 +1,20 @@
+{
+    "name": "clix/callcenter",
+    "description": "",
+    "authors": [
+        {
+            "name": "Simon Skinner",
+            "email": "s.skinner@clix.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Clix\\Callcenter\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
