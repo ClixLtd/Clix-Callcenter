@@ -80,6 +80,11 @@ class StandardBoardGame implements BoardGameInterface
 	 */
 	public function movePlayer($playerID, $newPosition)
 	{
+		$dimensions = $this->getProperty('dimensions');
+		$totalSquares = $dimensions['width'] * $dimensions['height'];
+
+		$newPosition = ($newPosition > $totalSquares) ? $newPosition - $totalSquares : $newPosition;
+
 		if ( isset($this->getProperty('players')[$playerID]) )
 		{
 			// Lets move the player to the new position
@@ -100,7 +105,7 @@ class StandardBoardGame implements BoardGameInterface
 		// Save the players
 		$this->savePlayerPositions();
 
-		return $this->getProperty('lastResult');
+		return $newPosition;
 	}
 
 	/**

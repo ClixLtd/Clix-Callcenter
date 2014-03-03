@@ -31,7 +31,12 @@ class GameController extends StandardBoardGame
 		}
 		else if ( isset($board['hidden'][$newPosition]) )
 		{
-			
+			$newPositionDetails = $board['hidden'][$newPosition];
+
+			$this->setProperty('lastResult', array(
+				'type' 	     => 'HP',
+				'content' 	 => $newPositionDetails,
+			));
 		}
 		else
 		{
